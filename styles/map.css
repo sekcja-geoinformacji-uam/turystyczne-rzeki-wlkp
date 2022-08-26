@@ -1,7 +1,12 @@
-#map { 
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
- }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.navbar {
+  margin-bottom: 0;
+}
+#map {
+  height: calc(100% - 56px);
+  width: 100%;
+}
