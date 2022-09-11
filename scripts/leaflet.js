@@ -6,5 +6,23 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap",
 }).addTo(map);
 
-L.geoJSON(bazy).addTo(map);
-L.geoJSON(rzeki).addTo(map);
+const rzekiLayer = L.geoJSON(rzeki)
+const bazyLayer = L.geoJSON(bazy)
+
+const rzekiSwitch = document.getElementById("rzekiSwitch")
+const bazySwitch = document.getElementById("bazySwitch")
+
+function switchLayers(layer) {
+  const values = {
+    'rzeki': [rzekiSwitch, rzekiLayer],
+    'bazy': [bazySwitch, bazyLayer]
+  };
+  if (values[layer][0].checked) {
+    values[layer][1].addTo(map)
+  } else if (!values[layer][0].checked){
+    map.removeLayer(values[layer][1])
+  }
+}
+
+rzekiSwitch.addEventListener('change', () => switchLayers('rzeki'))
+bazySwitch.addEventListener('change',  () => switchLayers('bazy'))
