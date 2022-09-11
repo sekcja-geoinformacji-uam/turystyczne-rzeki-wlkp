@@ -25,13 +25,26 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">turystyczne rzeki wielkopolski</a>
+    <div class="container-fluid" style="height: 100%">
+      <div class="row" style="height: 100%">
+        <div class="col-md-2 col-sm-12 contacts-container mb-auto">
+          <h2>turystyczne rzeki wielkopolski</h2>
+          <div class="d-flex flex-column flex-shrink-0 bg-light" style="width:4.5rem;">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rzekiSwitch">
+              <label class="form-check-label" for="rzekiSwitch">Rzeki</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="bazySwitch">
+              <label class="form-check-label" for="bazySwitch">Bazy</label>
+            </div>
+          
+         </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-12 flex-fill" id="map"></div>
       </div>
-    </nav>
-
-    <div id="map"></div>
+    </div>
 
     <script type="module" src="scripts/leaflet.js"></script>
     <script
