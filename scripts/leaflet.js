@@ -9,6 +9,9 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const rzekiLayer = L.geoJSON(rzeki)
 const bazyLayer = L.geoJSON(bazy)
 
+rzekiLayer.addTo(map)
+bazyLayer.addTo(map)
+
 const rzekiSwitch = document.getElementById("rzekiSwitch")
 const bazySwitch = document.getElementById("bazySwitch")
 
@@ -26,3 +29,4 @@ function switchLayers(layer) {
 
 rzekiSwitch.addEventListener('change', () => switchLayers('rzeki'))
 bazySwitch.addEventListener('change',  () => switchLayers('bazy'))
+
