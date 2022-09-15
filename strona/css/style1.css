@@ -1,13 +1,28 @@
 
-nav.navbar-custom{
-    background-color: #111111;
-}
-
-nav.navbar-custom .navbar-brand {
-    color: whitesmoke;
-}
 
 .nav-link{
     color:white;
+}
+
+
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.cover {
+  padding: 18% 10%;
+  text-align: center;
+  
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.lead{
+    text-align: justify;
 }
 
