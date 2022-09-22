@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Turystyczne Rzeki Wielkopolski</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
@@ -26,22 +26,87 @@
   </head>
   <body>
     <div class="container-fluid" style="height: 100%">
+
       <div class="row" style="height: 100%">
+
         <div class="col-2 contacts-container mb-auto">
-          <h2>turystyczne rzeki wielkopolski</h2>
+
+          <h2><a href="index.html" style="text-decoration:none">turystyczne rzeki wielkopolski</a></h2>
+
           <div class="d-flex flex-column flex-shrink-0">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" checked id="rzekiSwitch">
-              <label class="form-check-label" for="rzekiSwitch">Rzeki</label>
-            </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" checked id="bazySwitch">
-              <label class="form-check-label" for="bazySwitch">Bazy</label>
-            </div>
+
+            <h5>Warstwy</h5>
+
+            <ul class="list-group">
+
+              <li class="list-group-item">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked id="bazySwitch">
+                  <label class="form-check-label" for="bazySwitch">Bazy</label>
+                </div>
+              </li>
+
+              <li class="list-group-item">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked id="rzekiSwitch" onchange="document.getElementById('zwaCheck').disabled = !this.checked; document.getElementById('zwbCheck').disabled = !this.checked; document.getElementById('zwcCheck').disabled = !this.checked; document.getElementById('zwalkiCheck').disabled = !this.checked"  
+                  >
+                  <label class="form-check-label" for="rzekiSwitch">Rzeki</label>
+                </div>
+              </li>
+
+              <li class="list-group-item">
+
+                <ul class="list-group">
+                  <h5>Trudność</h5>
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="zwa" id="zwaCheck" checked>
+                      <label class="form-check-label" for="zwaCheck">
+                        ZWA
+                      </label>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="zwb" id="zwbCheck" checked>
+                      <label class="form-check-label" for="zwbCheck">
+                        ZWB
+                      </label>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="zwc" id="zwcCheck" checked>
+                      <label class="form-check-label" for="zwcCheck">
+                        ZWC
+                      </label>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="zwalki" id="zwalkiCheck" checked>
+                      <label class="form-check-label" for="zwalkiCheck">
+                        zwałki
+                      </label>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </li>
+            </ul>
+
          </div>
+
         </div>
+
         <div class="col-10 flex-fill" id="map"></div>
+
       </div>
+
     </div>
 
     <script type="module" src="scripts/leaflet.js"></script>
