@@ -6,27 +6,99 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap",
 }).addTo(map);
 
-const rzekiLayer = L.geoJSON(rzeki)
-const bazyLayer = L.geoJSON(bazy)
+const zwaLayer = L.geoJSON(rzeki, {
+  filter: zwaFilter,
+  color: 'blue'
+})
+const zwbLayer = L.geoJSON(rzeki, {
+  filter: zwbFilter,
+  color: 'yellow'
+})
+const zwcLayer = L.geoJSON(rzeki, {
+  filter: zwcFilter,
+  color: 'red'
+})
+const zwalkiLayer = L.geoJSON(rzeki, {
+  filter: zwalkiFilter,
+  color: 'brown'
+})
 
-rzekiLayer.addTo(map)
+const bazyLayer = L.geoJSON(bazy, {
+  onEachFeature: function (feature, layer) {
+      layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> Telefon: '+feature.properties.telefon+'</p>');
+  }
+})
+
+function zwaFilter(feature) {
+  if (feature.properties.Trudność === "ZWA") return true
+}
+
+function zwbFilter(feature) {
+  if (feature.properties.Trudność === "ZWB") return true
+}
+
+function zwcFilter(feature) {
+  if (feature.properties.Trudność === "ZWC") return true
+}
+
+function zwalkiFilter(feature) {
+  if (feature.properties.Trudność === "zwałki") return true
+}
+
+zwaLayer.addTo(map)
+zwbLayer.addTo(map)
+zwcLayer.addTo(map)
+zwalkiLayer.addTo(map)
 bazyLayer.addTo(map)
 
-const rzekiSwitch = document.getElementById("rzekiSwitch")
-const bazySwitch = document.getElementById("bazySwitch")
+const rzekiSwitch = document.getElementById("rzekiSwitch");
+const bazySwitch = document.getElementById("bazySwitch");
 
-function switchLayers(layer) {
-  const values = {
-    'rzeki': [rzekiSwitch, rzekiLayer],
-    'bazy': [bazySwitch, bazyLayer]
-  };
-  if (values[layer][0].checked) {
-    values[layer][1].addTo(map)
-  } else if (!values[layer][0].checked){
-    map.removeLayer(values[layer][1])
+const zwaCheck= document.getElementById("zwaCheck");
+const zwbCheck= document.getElementById("zwbCheck");
+const zwcCheck= document.getElementById("zwcCheck");
+const zwalkiCheck= document.getElementById("zwalkiCheck");
+
+
+function switchLayers() {
+  const layers = [zwaLayer, zwbLayer, zwcLayer, zwalkiLayer]
+  const values = ['zwa', 'zwb', 'zwc', 'zwalki']
+  if (!rzekiSwitch.checked) {
+    for (let layer = 0; layer <= layers.length; layer++) {
+      map.removeLayer(layers[layer])
+    }
+  }
+  if (rzekiSwitch.checked) {
+    for (let value = 0; value <= values.length; value++){
+      switchFilters(values[value])
+    }
+  }
+  if (bazySwitch.checked) {
+    bazyLayer.addTo(map);
+  } if (!bazySwitch.checked){
+    map.removeLayer(bazyLayer)
   }
 }
 
-rzekiSwitch.addEventListener('change', () => switchLayers('rzeki'))
-bazySwitch.addEventListener('change',  () => switchLayers('bazy'))
+function switchFilters(filter) {
+  const values = {
+    'zwa': [zwaCheck, zwaLayer],
+    'zwb': [zwbCheck, zwbLayer],
+    'zwc': [zwcCheck, zwcLayer],
+    'zwalki': [zwalkiCheck, zwalkiLayer],
+  }
+    if (values[filter][0].checked) {
+      values[filter][1].addTo(map);
+    } else if (!values[filter][0].checked) {
+      map.removeLayer(values[filter][1])
+    }
 
+}
+
+
+rzekiSwitch.addEventListener('change', () => switchLayers())
+bazySwitch.addEventListener('change',  () => switchLayers())
+zwaCheck.addEventListener('change', () => switchFilters('zwa'))
+zwbCheck.addEventListener('change', () => switchFilters('zwb'))
+zwcCheck.addEventListener('change', () => switchFilters('zwc'))
+zwalkiCheck.addEventListener('change', () => switchFilters('zwalki'))
