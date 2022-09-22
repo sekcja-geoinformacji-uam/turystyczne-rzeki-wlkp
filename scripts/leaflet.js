@@ -53,14 +53,12 @@ bazyLayer.addTo(map)
 
 const rzekiSwitch = document.getElementById("rzekiSwitch");
 const bazySwitch = document.getElementById("bazySwitch");
-
 const zwaCheck= document.getElementById("zwaCheck");
 const zwbCheck= document.getElementById("zwbCheck");
 const zwcCheck= document.getElementById("zwcCheck");
 const zwalkiCheck= document.getElementById("zwalkiCheck");
 
-
-function switchLayers() {
+function switchRzekiLayers() {
   const layers = [zwaLayer, zwbLayer, zwcLayer, zwalkiLayer]
   const values = ['zwa', 'zwb', 'zwc', 'zwalki']
   if (!rzekiSwitch.checked) {
@@ -73,9 +71,12 @@ function switchLayers() {
       switchFilters(values[value])
     }
   }
+}
+
+function switchBazyLayers() {
   if (bazySwitch.checked) {
-    bazyLayer.addTo(map);
-  } if (!bazySwitch.checked){
+    bazyLayer.addTo(map)
+  } else {
     map.removeLayer(bazyLayer)
   }
 }
@@ -92,12 +93,10 @@ function switchFilters(filter) {
     } else if (!values[filter][0].checked) {
       map.removeLayer(values[filter][1])
     }
-
 }
 
-
-rzekiSwitch.addEventListener('change', () => switchLayers())
-bazySwitch.addEventListener('change',  () => switchLayers())
+rzekiSwitch.addEventListener('change', () => switchRzekiLayers())
+bazySwitch.addEventListener('change',  () => switchBazyLayers())
 zwaCheck.addEventListener('change', () => switchFilters('zwa'))
 zwbCheck.addEventListener('change', () => switchFilters('zwb'))
 zwcCheck.addEventListener('change', () => switchFilters('zwc'))
