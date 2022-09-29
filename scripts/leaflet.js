@@ -32,11 +32,8 @@ bazySwitch.addEventListener('change',  () => switchLayers('bazy'))
 
 ///do poprawki - popupy z danymi
 L.geoJson(bazyLayer, {
-	style: function (nazwa) {
-		return {color: feature.properties.color};
-	},
-	onEachFeature: function (name, bazyLayer) {
-		layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> name: '+feature.properties.telefon+'</p>');
-	}
+	onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
+}
 }).addTo(map);
 
