@@ -5,17 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turystyczne Rzeki Wielkopolski</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles/map.css" />
     <script
@@ -23,42 +19,66 @@
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""
     ></script>
+
+
   </head>
   <body>
-    <div class="container-fluid" style="height: 100%">
+
+    <div class="container-fluid"  style="height: 100%">
+      
 
       <div class="row" style="height: 100%">
 
-        <div class="col-2 contacts-container mb-auto">
+        <div class="d-flex flex-column flex-shrink-0 mb-auto bg-dark text-white" style="height:100%; width: 7rem;">
+          <div class="mb-auto">
+            <img src="images/kayak_1.png" alt="" width="60" height="60" class="mx-auto d-block m-3">
+            <button type="button" class="btn btn-dark btn-lg" onclick="openWarstwy()">Warstwy</button>
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#legendModal" aria-hidden="true">Legenda</button> 
+          </div>
+          <a href="index.html"><img src="images/home.png" alt="" width="40" height="40" class="mx-auto d-block m-4"></a>
+        </div>
 
-          <h2><a href="index.html" style="text-decoration:none">turystyczne rzeki wielkopolski</a></h2>
+          <div class="modal fade" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content  bg-dark text-white">
+              <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <p class="text-justify"><div class="h4">ZWA</div>(bardzo łatwy, dostępny dla początkujących) – małe zbiorniki, woda stojąca, brak fal, słaby prąd, praktyczny brak przeszkód,</p>
+                <p class="text-justify"><div class="h4">ZWB</div>(łatwy, dostępny dla początkujących) – średnie zbiorniki, rzeki o dość silnym prądzie, przeszkody i zjawiska podwyższające trudność,</p>
+                <p class="text-justify"><div class="h4">ZWC</div>(nieco trudny, dostępny dla początkujących pod opieką doświadczonych) – duże zbiorniki, szybki nurt, małe regularne bystrza, ostre zakręty, mielizny, ławice, duża liczba przeszkód wymagających dokładnego manewrowania</p>
+                <p class="text-justify"><div class="h4">Kajakarstwo zwałkowe</div>(kajakarstwo nastawione na pokonywanie rzek i strumieni o dużej liczbie przeszkód w korycie (tzw. zwałek) uniemożliwiających swobodne przepłynięcie. Przeszkody pokonuje się najczęściej bez opuszczania kajaka z wykorzystaniem różnych technik i sprzętu, często potrzebna jest współpraca kilku kajakarzy. Wymaga to doświadczenia w spływaniu kajakiem jednoosobowym ponieważ to one najlepiej nadają się na zwałki.</p>
+              </div>
+            </div>
+          </div>
+          </div>
 
-          <div class="d-flex flex-column flex-shrink-0">
-
-            <h5>Warstwy</h5>
+        <div class="d-flex">
+          <div id="warstwySidepanel" class="sidepanel">
 
             <ul class="list-group">
-
-              <li class="list-group-item">
+          
+              <li class="list-group-item bg-dark text-white">
                 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" checked id="bazySwitch">
                   <label class="form-check-label" for="bazySwitch">Bazy</label>
                 </div>
               </li>
-
-              <li class="list-group-item">
+          
+              <li class="list-group-item bg-dark text-white">
                 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" checked id="rzekiSwitch" onchange="document.getElementById('zwaCheck').disabled = !this.checked; document.getElementById('zwbCheck').disabled = !this.checked; document.getElementById('zwcCheck').disabled = !this.checked; document.getElementById('zwalkiCheck').disabled = !this.checked"  
                   >
                   <label class="form-check-label" for="rzekiSwitch">Rzeki</label>
                 </div>
               </li>
-
-              <li class="list-group-item">
-
+          
+              <li class="list-group-item  bg-dark text-white">
+          
                 <ul class="list-group">
                   <h5>Trudność</h5>
-                  <li class="list-group-item">
+                  <li class="list-group-item  bg-dark text-white">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="zwa" id="zwaCheck" checked>
                       <label class="form-check-label" for="zwaCheck">
@@ -66,8 +86,8 @@
                       </label>
                     </div>
                   </li>
-
-                  <li class="list-group-item">
+          
+                  <li class="list-group-item  bg-dark text-white">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="zwb" id="zwbCheck" checked>
                       <label class="form-check-label" for="zwbCheck">
@@ -75,8 +95,8 @@
                       </label>
                     </div>
                   </li>
-
-                  <li class="list-group-item">
+          
+                  <li class="list-group-item  bg-dark text-white">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="zwc" id="zwcCheck" checked>
                       <label class="form-check-label" for="zwcCheck">
@@ -84,8 +104,8 @@
                       </label>
                     </div>
                   </li>
-
-                  <li class="list-group-item">
+          
+                  <li class="list-group-item  bg-dark text-white">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="zwalki" id="zwalkiCheck" checked>
                       <label class="form-check-label" for="zwalkiCheck">
@@ -93,27 +113,33 @@
                       </label>
                     </div>
                   </li>
-
+          
                 </ul>
-
+          
               </li>
             </ul>
-
-         </div>
-
+          </div>
         </div>
-
-        <div class="col-10 flex-fill" id="map"></div>
+        <div class="d-flex col" id="map"></div>
 
       </div>
-
+      
     </div>
-
+    <script>
+      /* Set the width of the sidebar to 250px (show it) */
+function openWarstwy() {
+  var element = document.getElementById("warstwySidepanel");
+  if (element.style.width == "150px") {
+    element.style.width = "0px";
+  } else {
+    element.style.width = "150px";
+  }
+}
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="module" src="scripts/leaflet.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
+   
   </body>
 </html>
