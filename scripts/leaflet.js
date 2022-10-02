@@ -1,4 +1,5 @@
-import { bazy, rzeki } from "./data.js";
+import { opisRzek, bazy, rzeki } from "./data.js"
+
 
 const map = L.map("map").setView([53.05339, 16.73201], 9);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -8,19 +9,37 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 const zwaLayer = L.geoJSON(rzeki, {
   filter: zwaFilter,
-  color: 'blue'
+  color: 'blue',
+  onEachFeature: function (feature, layer) {
+    // layer.setText(feature.properties.name, {
+    //   center: true,
+    //   offset: 5,
+    //   attributes: {
+    //   "font-size": "18"
+    // }})
+    layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>');
+  }
 })
 const zwbLayer = L.geoJSON(rzeki, {
   filter: zwbFilter,
-  color: 'yellow'
+  color: 'yellow',
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
+  }
 })
 const zwcLayer = L.geoJSON(rzeki, {
   filter: zwcFilter,
-  color: 'red'
+  color: 'red',
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
+  }
 })
 const zwalkiLayer = L.geoJSON(rzeki, {
   filter: zwalkiFilter,
-  color: 'brown'
+  color: 'brown',
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
+  }
 })
 
 const bazyLayer = L.geoJSON(bazy, {
