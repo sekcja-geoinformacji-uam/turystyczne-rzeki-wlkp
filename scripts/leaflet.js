@@ -101,7 +101,7 @@ function switchBazyLayers() {
 }
 
 function createCustomIcon (feature, latlng) {
- L.Icon ({
+  new L.icon ({
   iconUrl: 'ciemna_ikona.png',
 	iconRetinaUrl: 'ciemna_ikona.png',
 	iconSize: [20, 15],
@@ -115,9 +115,13 @@ let myLayerOptions = {
     pointToLayer: createCustomIcon
 }
 
-L.geoJson(bazyLayer, {
+const bazyLayer = L.geoJson(bazy, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng,
+      {icon: ikona_bazy});
+  },
 	onEachFeature: function (feature, layer) {
-    layer.bindPopup, (icon = ikona_bazy)('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
+    layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
 }
 }).addTo(map);
 
