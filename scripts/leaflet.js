@@ -42,7 +42,6 @@ const zwalkiLayer = L.geoJSON(rzeki, {
   }
 })
 
-
 const ikona_bazy =  L.icon ({
   iconUrl: 'images/ciemna_ikona.png',
 	iconRetinaUrl: 'images/ciemna_ikona.png',
