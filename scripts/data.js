@@ -1,3 +1,33 @@
+const opisRzek = {
+  Warta: "Warta to rzeka o charakterze nizinnym, płynie wolno, zwykle szerokimi dolinami, choć bywają miejsca, gdzie nurt podchodzi pod wyższe terasy i wówczas brzegi są strome, nawet o charakterze klifowym.",
+  Wełna: "Wełna w swoim dolnym odcinku, wręcz przypomina rzeki górskie. Woda nie zamarza w niej nawet zimą. O górskim charakterze tego odcinka Wełny świadczy także występująca tu flora, typowa dla rzek górskich. Wełna znana jest ze skrzyżowania z rzeką Nielbą w Wągrowcu powstałego w wyniku prac melioracyjnych przeprowadzonych przez cystersów w XVI i XIX wieku. Wełna, większa i płynąca szybciej od Nielby płynie tu górą, przy okazji zabierając jej część wód.",
+  Noteć: "Noteć na odcinku od Kanału Bydgoskiego do Krzyża ma koryto obudowane budowlami regulacyjnymi, a na samej rzece znajduje się 14 stopni wodnych składających się z jazu piętrzącego wodę i śluz żeglugowych. To rzeka nizinna, płynąca leniwie, a na odcinkach poprzegradzanych śluzami prawie stojąca. W krajobrazie Doliny Noteci dominują łąki i pola, a malowniczości dodają mu liczne starorzecza, kanały i rowy odwadniające.",
+  Drawa: "Drawa jest rzeką bardzo zróżnicowaną. Fragmentami płynie leniwie szeroką doliną, fragmentami – bystrym prądem, dużym spadkiem i kamienistym dnem przypomina górską rzekę. Proponowany odcinek spływu w województwie wielkopolskim to licząca 25 km trasa z miejscowości Stare Osieczno do ujścia rzeki w Bielicach Nowych. Nurt Drawy uspokaja się, choć w dalszym ciągu jest wartki. Rzeka jest już szersza i nie występują niebezpieczne przeszkody.",
+  Gwda: "Gwda na długim odcinku płynie przez tereny zalesione, a przy ujściu staje się wolna, rozlewa się szerzej i meandruje wśród łąk. Rzeka płynie także przez tereny leśne, bory mieszane, atrakcją są liczne przełomy oraz malownicze wąwozy.",
+  Piława: "Piława przepływa przez siedem rezerwatów, co świadczy o występującej tam bardzo bogatej florze i faunie. W górnym biegu rzeki trasę urozmaicają urokliwe jeziora i przepiękne krajobrazy. Dolny odcinek jest bezleśny z wysokimi brzegami i malowniczą linią brzegową. Nurt urozmaicają liczne bystrza i podwodne głazy. Woda jest krystalicznie czysta, podziwiać można wiele gatunków ryb.",
+  Dobrzyca: "Dobrzyca w większości przepływa przez tereny leśne. Silnie meandruje, omijając na swej drodze liczne jeziora. W wyniku dużej aktywności bobrów i naturalnej erozji tworzy uroczyska, a jej koryto jest zatarasowane powalonymi drzewami, przez co jest zdecydowanie trudniejsza do pokonania. Na trasie zobaczymy ciekawe drzewostany bukowe i grabowe oraz okazałe martwe dęby, dawniej pomniki przyrody. Dobrzycę określa się czasem jako rzekę o charakterze górskim, jest ona jednak na ogół płytka i spokojna, tylko między Golcami a Ostrowcem zwęża się i przyspiesza nurt. W tych miejscach brzegi są najwyższe – od kilku do nawet kilkunastu metrów, a woda głębsza.",
+  Rurzyca: "Rurzyca uznawana jest za najczystszą rzekę województwa wielkopolskiego z wodami I klasy czystości. Na swej drodze pokonuje sześć wyjątkowo urokliwych, wąskich jezior rynnowych. Płytka, piaszczysta rzeka otoczona jest pięknymi lasami.",
+  Głomia: "Głomia od Złotowa do Skórki biegnie głównie wśród pól i łąk, lecz niezwykłego uroku dodają mu bujnie zadrzewione i zakrzewione, na przeważającej długości, brzegi. Dalej, aż do ujścia, płynie już przez piękny i popularny wśród okolicznych grzybiarzy las.",
+  Płytnica: "Płytnica to bardzo malowniczy szlak z niezwykle urokliwymi krajobrazami. W swoim górnym biegu, Płytnica płynie przez kilka jezior i teren byłego poligonu, w którego rejonie znajdują się dobrze zachowane bunkry wału pomorskiego. W środkowym biegu szlak nie jest zbyt ciekawy, a od Sypniewka do miejscowości Budy jest uregulowany i wyprostowany, bardziej przypominając rów melioracyjny niż rzekę. Dolny bieg (od m. Budy) natomiast to pełen pierwotnego uroku odcinek leśny z niewielkimi bystrzami, gwarantujący niezapomniane wrażenia.",
+  Flinta: "Flinta to niewielka rzeczka, składa się z dwóch różnych części; do Boruchowa płynie wśród pól i łąk, jest uregulowana i raczej nudnawa; poniżej Boruchowa jest to szlak urozmaicony, leśny; utrudnieniem jest kilka zwalonych drzew i jazów; szlak dostępny zasadniczo przy wyższej wodzie, również do pływania zimą.",
+  Szczyra: "Szczyra bardzo ciekawy szlak z dużą ilością zwalonych drzew, które skutecznie wydłużają czas przeprawy.",
+  Debrzynka: "Debrzynka - szlak jest urozmaicony, dość trudny i uciążliwy. Do pokonania mamy trochę zwałek.",
+  Czernica: "Czernica na przeważającej długości, szlak prowadzi przez piękne lasy, choć na górnym odcinku są też pola i łąki. Rzeka nie należy do najłatwiejszych. Trzeba trochę pomanewrować i przeciskać się przez zwalone drzewa, krzaki, gałęzie, których na odcinku do Dzikowa jest dużo, a dalej już mniej. Do pokonania jest też kilka bystrzy.",
+  "Bukówka (Kamionka)": "Bukówka (Administracyjnie odcinki noszą też nazwę Bukowa i Molita) - dzika zarośnięta rzeczka. Powalone drzewa spowalniają nurt i gdzieniegdzie podniosły poziom wody. Płynie przez tereny leśne i dzikie łąki.",
+  Chrząstowa: "płytka, w nurcie powalone drzewa, na trasie również tamy bobrowe z koniecznymi przenoskami.",
+  Kcynka: "wąska, kręta rzeka. Niektóre odcinki płynie się wąwozem, dużo powalonych drzew, kaskad i bobrowych tam.",
+  Łobżonka: "meandrująca rzeka, szeroko rozlana przed Łobżenicą, w dolnym odcinku płynie przez równinne i podmokłe tereny Doliny Noteci. Poprzegradzana przez drzewa, gdzieniegdzie bystrza i kamieniste mielizny. Przez obecność elektrowni wymagane są przenoski oraz często waha się stan wody.",
+  "Mała Wełna": "malownicza, wąska, płynie dolinami przez wiele drobnych jezior. Spotkamy na niej zakola, bystrza i progi. Dostępna sezonowo - wiosną.",
+  Miała: "rzeka o słabym nurcie, łączy ze sobą 9 jezior rynnowych, które są płytkie ale muliste. Wymagane na trasie przenoski",
+  Sama: "płynie wąską doliną o wysokich brzegach, dostępna tylko przy wyższym stanie wody. Pnie drzew, mosty i śluzy wymagają przenosek.",
+  Samborza: " (Samborka) - nadaje się do spływania przy wysokich stanach wody (marzec, kwiecień), widoczna działalność bobrów.",
+  Czarna: "",
+  Człopica: "",
+  Łomnica: "",
+  Orla: ""
+};
+
+
 const bazy = {
   "type": "FeatureCollection",
   "name": "bazy",
@@ -77,4 +107,4 @@ const rzeki = {
   ]
   }  
   
-export {bazy, rzeki}
+export {opisRzek, bazy, rzeki}
