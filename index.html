@@ -1,30 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pl">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/kayak_1.png">
+    <link rel="stylesheet" href="styles/style1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+ 
   </head>
-  <body>
-    <nav class="navbar navbar-dark bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">turystyczne rzeki wielkopolski</a>
+  <body class="bg-secondary">
+   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-md">
+                <a class="navbar-brand" style="display:contents" href="#">
+                    <img src="images/kayak_1.png" alt="" width="37" height="37" class="d-none d-md-inline">
+                    Turystyczne odcinki rzek w północnej Wielkopolsce
+                  </a>
+            <div class="dropdown">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" id="dropdownMenuButton" data-bs-toggle="dropdown" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item" href="#home">Strona główna</a></li>
+                      <li><a class="dropdown-item" href="#">Mapa</a></li>
+                      <li><a class="dropdown-item" href="#team">Autorzy</a></li>
+                      <li><a class="dropdown-item" href="https://sekcjageoinformacji.amu.edu.pl/" target="_blank">Sekcja Geoinformacji</a></li>
+                    </ul>
+                    <span class="navbar-toggler-icon"></span>
+               
+               </button>
+              </div>"
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                     <li class="button">
+                        <a class="btn btn-outline-light mr-1" aria-current="page" href="#home">Strona główna</a>
+                     </li>
+                     <li class="button">
+                            <a class="btn btn-outline-light mr-1" href="#">Mapa</a>
+                         </li>
+                     <li class="button">
+                        <a class="btn btn-outline-light mr-1" href="#team">Autorzy</a>
+                     </li>
+                     <li class="button">
+                        <a class="btn btn-outline-light mr-1" href="https://sekcjageoinformacji.amu.edu.pl/" target="_blank">Sekcja Geoinformacji</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+            <div class="inner cover" id="home">
+      <div class="container" >
+        <div class="row">
+          <div class="col-sm">
+            <h2 class="cover-heading" >Opis projektu</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in lectus a lorem pellentesque efficitur. Pellentesque tincidunt lectus in ante congue, in fermentum nulla elementum. Ut rhoncus vehicula nisi, eu varius enim porttitor ut. Nunc tempor tellus quis nunc ultricies, eget convallis sapien accumsan. Proin aliquam enim sed neque maximus interdum. Fusce vel dolor non erat ultrices laoreet ut ut nulla. Proin sodales eleifend diam nec tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ultricies, ex placerat vulputate maximus, ligula diam ullamcorper nisi, sed pellentesque lectus ipsum et lorem. Vivamus ut ante a lacus maximus sagittis.</p>
+            <p class="button">
+              <a href="map.html" class="btn btn-outline-light btn-lg">Przejdź do mapy</a>
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5">
+         <div class="col-md-8">
+          <div class="card text-white bg-secondary">
+            <div class="card-body">
+              <h5 class="card-title">Źródła danych</h5>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere viverra eros a egestas. Sed vestibulum mattis fermentum. Donec eleifend nec sapien in condimentum. Proin eget aliquet massa. Sed ac dui risus. Nunc ligula quam, pharetra eu sem sit amet, sollicitudin venenatis ex. Maecenas ante erat, tristique malesuada fringilla ut, congue a mauris. Maecenas sollicitudin lacus ut fringilla dignissim. Mauris sit amet leo ut ipsum tincidunt facilisis. Integer ut leo sed velit ultricies ullamcorper nec eget ligula. Donec congue viverra ligula sed mollis.</p>
+              <a href="map.html" class="btn btn-outline-light btn-lg">Przejrzyj dane</a>
+            </div>
+          </div>
+         </div>
+         <div class="col-md-4">
+          <div class="d-none d-md-inline">Ikonka</div>
+         </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="d-none d-md-inline">Ikonka</div>
+          </div>
+          <div class="col-md-8">
+           <div class="card text-white bg-secondary">
+             <div class="card-body">
+               <h5 class="card-title">Kategorie rzek</h5>
+               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere viverra eros a egestas. Sed vestibulum mattis fermentum. Donec eleifend nec sapien in condimentum. Proin eget aliquet massa. Sed ac dui risus. Nunc ligula quam, pharetra eu sem sit amet, sollicitudin venenatis ex. Maecenas ante erat, tristique malesuada fringilla ut, congue a mauris. Maecenas sollicitudin lacus ut fringilla dignissim. Mauris sit amet leo ut ipsum tincidunt facilisis. Integer ut leo sed velit ultricies ullamcorper nec eget ligula. Donec congue viverra ligula sed mollis.</p>
+               <a href="map.html" class="btn btn-outline-light btn-lg">Zobacz kategorie</a>
+             </div>
+           </div>
+          </div>
+         </div>
+         <div class="row mt-5">
+          <div class="col-md-8">
+           <div class="card text-white bg-secondary">
+             <div class="card-body">
+               <h5 class="card-title">Nwm co jeszcze xd</h5>
+               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere viverra eros a egestas. Sed vestibulum mattis fermentum. Donec eleifend nec sapien in condimentum. Proin eget aliquet massa. Sed ac dui risus. Nunc ligula quam, pharetra eu sem sit amet, sollicitudin venenatis ex. Maecenas ante erat, tristique malesuada fringilla ut, congue a mauris. Maecenas sollicitudin lacus ut fringilla dignissim. Mauris sit amet leo ut ipsum tincidunt facilisis. Integer ut leo sed velit ultricies ullamcorper nec eget ligula. Donec congue viverra ligula sed mollis.</p>
+               <a href="map.html" class="btn btn-outline-light btn-lg">kolejny link do mapy :D</a>
+             </div>
+           </div>
+          </div>
+          <div class="col-md-4">
+           <div class="d-none d-md-inline">Ikonka</div>
+          </div>
+         </div>
       </div>
-    </nav>
-    <div id="title">Zabierz mnie do mapy!</div>
-    <br />
-    <button onclick="location.href='map.html'">Mapa</button>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
+    </div>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> 
+   </div>
+
+   <div class="container" id="team">
+    <div class="row">
+      <div class="col-md-12 pt-5 pb-2 ourTeam-hedding text-center">
+        <h1>Autorzy</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="row section-success ourTeam-box text-center">
+          <div class="col-md-12 section1">
+            <img src="https://www.formica.com/pl-pl/-/media/formica/emea/products/swatch-images/f2253/f2253-swatch.jpg?rev=b3530e194b5d4fb1959909e67e9bea04" width="200" height="290">
+          </div>
+          <div class="col-md-12 section2 pb-4">
+            <p><strong>MATEUSZ RYDZIK </strong></p>
+            <span>Lorem ipsum dolor sit amet, <br>consectetur.</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="row section-success ourTeam-box text-center">
+          <div class="col-md-12 section1">
+            <img src="https://www.formica.com/pl-pl/-/media/formica/emea/products/swatch-images/f2253/f2253-swatch.jpg?rev=b3530e194b5d4fb1959909e67e9bea04" width="200" height="290">
+          </div>
+          <div class="col-md-12 section2 pb-4">
+            <p><strong>KATARZYNA PIOTROWSKA</strong></p>
+            <span>Lorem ipsum dolor sit amet, <br>consectetur.</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="row section-info ourTeam-box text-center">
+          <div class="col-md-12 section1">
+            <img src="https://www.formica.com/pl-pl/-/media/formica/emea/products/swatch-images/f2253/f2253-swatch.jpg?rev=b3530e194b5d4fb1959909e67e9bea04" width="200" height="290">
+          </div>
+          <div class="col-md-12 section2 p4-3">
+            <p><strong> DAWID CZAJKOWSKI</strong></p>
+            <span>Lorem ipsum dolor sit amet, <br>consectetur.</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="row section-danger ourTeam-box text-center">
+          <div class="col-md-12 section1">
+            <img src="https://www.formica.com/pl-pl/-/media/formica/emea/products/swatch-images/f2253/f2253-swatch.jpg?rev=b3530e194b5d4fb1959909e67e9bea04" width="200" height="290">
+          </div>
+          <div class="col-md-12 section2 pb-4">
+            <p><strong>DAGMARA KRAMARCZYK</strong></p>
+            <span>Lorem ipsum dolor sit amet, <br>consectetur.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+   <footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+ 
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SekcjaGeoinformacjiUam" target="_blank" role="button">
+        <i class="fa fa-facebook-f"></i>
+        </a>
+  
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/sekcja_geoinformacji_uam/" target="_blank" role="button">
+        <i class="fa fa-instagram"></i>
+        </a>
+
+        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/sekcja-geoinformacji-uam" target="_blank" role="button">
+        <i class="fa fa-github"></i>
+        </a>
+
+        <a class="btn btn-outline-light btn-floating m-1" href="https://sekcjageoinformacji.amu.edu.pl" target="_blank" role="button">
+          <i class="fa fa-globe"></i>
+        </a>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://sekcjageoinformacji.amu.edu.pl">Sekcja Geoinformacji UAM</a>
+    </div>
+  </footer>
   </body>
 </html>
