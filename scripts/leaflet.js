@@ -100,21 +100,24 @@ function switchBazyLayers() {
   }
 }
 
-var ikona_bazy = L.Icon ({
-  iconUrl: '.png',
-	iconRetinaUrl: '.png',
-	iconSize: [, ],
-	iconAnchor: [, ],
-	popupAnchor: [-,],
-	shadowUrl: '.png',
-	shadowRetinaUrl: '.png',
-	shadowSize: [,],
-	shadowAnchor: []
+function createCustomIcon (feature, latlng) {
+ L.Icon ({
+  iconUrl: 'ciemna_ikona.png',
+	iconRetinaUrl: 'ciemna_ikona.png',
+	iconSize: [20, 15],
+	iconAnchor: [10, 10],
+	popupAnchor: [10,10],
 })
+  return L.marker(latlng, { icon: ikona_bazy })
+}
+
+let myLayerOptions = {
+    pointToLayer: createCustomIcon
+}
 
 L.geoJson(bazyLayer, {
 	onEachFeature: function (feature, layer) {
-    layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
+    layer.bindPopup, (icon = ikona_bazy)('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
 }
 }).addTo(map);
 
