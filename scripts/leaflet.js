@@ -42,7 +42,21 @@ const zwalkiLayer = L.geoJSON(rzeki, {
   }
 })
 
+
+const ikona_bazy =  L.icon ({
+  iconUrl: 'images/ciemna_ikona.png',
+	iconRetinaUrl: 'images/ciemna_ikona.png',
+	iconSize: [40, 40],
+	iconAnchor: [10, 10],
+	popupAnchor: [10, 10],
+})
+
+
 const bazyLayer = L.geoJSON(bazy, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, 
+      {icon: ikona_bazy});
+  },
   onEachFeature: function (feature, layer) {
       layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> Telefon: '+feature.properties.telefon+'</p>');
   }
@@ -99,24 +113,6 @@ function switchBazyLayers() {
     map.removeLayer(bazyLayer)
   }
 }
-
-var ikona_bazy = L.Icon ({
-  iconUrl: '.png',
-	iconRetinaUrl: '.png',
-	iconSize: [, ],
-	iconAnchor: [, ],
-	popupAnchor: [-,],
-	shadowUrl: '.png',
-	shadowRetinaUrl: '.png',
-	shadowSize: [,],
-	shadowAnchor: []
-})
-
-L.geoJson(bazyLayer, {
-	onEachFeature: function (feature, layer) {
-    layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> telefon: '+feature.properties.telefon+'</p>');
-}
-}).addTo(map);
 
 function switchFilters(filter) {
   const values = {
