@@ -61,7 +61,7 @@ const bazy = {
   { "type": "Feature", "properties": { "fid": 26, "nazwa": "Spływy kajakowe Noclegi Marzanna Kowal Piłka\n", "telefon": "516673092" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 16.056610296686632, 52.792686146450997 ] ] } },
   { "type": "Feature", "properties": { "fid": 27, "nazwa": "Drawskie-kajaki\n", "telefon": "790224205" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 15.956975092650472, 53.005419798069461 ] ] } },
   { "type": "Feature", "properties": { "fid": 28, "nazwa": "Ad-Group Szkoła Kajakowa\n", "telefon": "692322674" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 16.003801283734653, 52.879915528210866 ] ] } },
-  { "type": "Feature", "properties": { "fid": 29, "nazwa": "UKS Kajak\n", "telefon": null }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 16.460305518766305, 53.058160959178402 ] ] } },
+  { "type": "Feature", "properties": { "fid": 29, "nazwa": "UKS Kajak\n", "telefon": "Brak" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 16.460305518766305, 53.058160959178402 ] ] } },
   { "type": "Feature", "properties": { "fid": 30, "nazwa": "Reakcja Łańcuchowa", "telefon": "530099881" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 17.468519371065657, 52.912145141467818 ] ] } },
   { "type": "Feature", "properties": { "fid": 31, "nazwa": "P.P.H.U. MARMAG- Marcin Buliński", "telefon": "696051343" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 17.204687897827263, 52.877514909746232 ] ] } },
   { "type": "Feature", "properties": { "fid": 32, "nazwa": "kajakiempowelnie.pl", "telefon": "663846050" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 17.11523795349845, 52.651645856211559 ] ] } },
