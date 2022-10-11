@@ -1,13 +1,13 @@
 import { opisRzek, bazy, rzeki } from "./data.js"
 
 
-const lightMapbox = L.tileLayer('mapbox://styles/czaj0206/cl8hl5pc8001h15o9l813ko77', {
+const podkładMapBox = L.tileLayer('https://api.mapbox.com/styles/v1/czaj0206/cl8hl5pc8001h15o9l813ko77/wmts?access_token=pk.eyJ1IjoiY3phajAyMDYiLCJhIjoiY2w4aGF4NndsMHc0cjNucXh4OXY0bHNoOCJ9.eQduJu3QP2jeEP8C2gJmDg', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     tileSize: 512,
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiY3phajAyMDYiLCJhIjoiY2w4aGF4NndsMHc0cjNucXh4OXY0bHNoOCJ9.eQduJu3QP2jeEP8C2gJmDg'
-})
+});
 
 const zwaLayer = L.geoJSON(rzeki, {
   filter: zwaFilter,
