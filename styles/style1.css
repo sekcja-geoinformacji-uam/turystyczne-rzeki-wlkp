@@ -27,6 +27,11 @@ body {
     text-indent: 3,5em;
 }
 
+.ikonka{
+  font-size: 800%!important;
+  margin-top: 30%;
+}
+
 .section2{
   padding:5% ;
 }
