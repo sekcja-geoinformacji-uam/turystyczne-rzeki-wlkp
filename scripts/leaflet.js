@@ -1,11 +1,13 @@
 import { opisRzek, bazy, rzeki } from "./data.js"
 
 
-const map = L.map("map").setView([53.05339, 16.73201], 9);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: "© OpenStreetMap",
-}).addTo(map);
+const lightMapbox = L.tileLayer('mapbox://styles/czaj0206/cl8hl5pc8001h15o9l813ko77', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiY3phajAyMDYiLCJhIjoiY2w4aGF4NndsMHc0cjNucXh4OXY0bHNoOCJ9.eQduJu3QP2jeEP8C2gJmDg'
+})
 
 const zwaLayer = L.geoJSON(rzeki, {
   filter: zwaFilter,
