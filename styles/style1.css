@@ -24,8 +24,14 @@ body {
 
 .lead{
     text-align: justify;
+    text-indent: 3,5em;
 }
 
 .section2{
   padding:5% ;
+}
+
+.opis{
+  text-align: justify;
+  text-indent: 1em;
 }
