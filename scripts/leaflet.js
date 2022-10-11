@@ -57,7 +57,7 @@ const bazyLayer = L.geoJSON(bazy, {
       {icon: ikona_bazy});
   },
   onEachFeature: function (feature, layer) {
-      layer.bindPopup('<h1>'+feature.properties.nazwa+'</h1><p> Telefon: '+feature.properties.telefon+'</p>');
+      layer.bindPopup('<h5>'+feature.properties.nazwa+'</h5><p> Telefon: '+feature.properties.telefon+'</p>');
   }
 })
 

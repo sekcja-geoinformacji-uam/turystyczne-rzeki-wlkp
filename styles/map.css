@@ -51,3 +51,14 @@ body {
 .openbtn:hover {
   background-color: #444;
 }
+
+.leaflet-popup-tip,
+.leaflet-popup-content-wrapper {
+    background: #343a40!important;
+    color: #ffffff;
+    border-radius: 0px;
+}
+
+h5 {
+  text-align: center;
+}
