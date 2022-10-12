@@ -1,12 +1,8 @@
 import { opisRzek, bazy, rzeki } from "./data.js"
 
 const map = L.map("map").setView([53.05339, 16.73201], 9);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: "© OpenStreetMap",
-}).addTo(map);
 
-const podkladMapBox = L.tileLayer('https://api.mapbox.com/styles/v1/czaj0206/cl8hl5pc8001h15o9l813ko77/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiY3phajAyMDYiLCJhIjoiY2w4aGF4NndsMHc0cjNucXh4OXY0bHNoOCJ9.eQduJu3QP2jeEP8C2gJmDg', {
+L.tileLayer('https://api.mapbox.com/styles/v1/czaj0206/cl8hl5pc8001h15o9l813ko77/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiY3phajAyMDYiLCJhIjoiY2w4aGF4NndsMHc0cjNucXh4OXY0bHNoOCJ9.eQduJu3QP2jeEP8C2gJmDg', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     tileSize: 512,
@@ -17,7 +13,9 @@ const podkladMapBox = L.tileLayer('https://api.mapbox.com/styles/v1/czaj0206/cl8
 
 const zwaLayer = L.geoJSON(rzeki, {
   filter: zwaFilter,
-  color: 'blue',
+  color: '#87CEFA',
+  weight: 4,
+  lineJoin: 'round',
   onEachFeature: function (feature, layer) {
     // layer.setText(feature.properties.name, {
     //   center: true,
@@ -30,21 +28,24 @@ const zwaLayer = L.geoJSON(rzeki, {
 })
 const zwbLayer = L.geoJSON(rzeki, {
   filter: zwbFilter,
-  color: 'yellow',
+  color: '#1E90FF',
+  weight: 3,
   onEachFeature: function (feature, layer) {
     layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
   }
 })
 const zwcLayer = L.geoJSON(rzeki, {
   filter: zwcFilter,
-  color: 'red',
+  color: '#4169E1',
+  weight: 2,
   onEachFeature: function (feature, layer) {
     layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
   }
 })
 const zwalkiLayer = L.geoJSON(rzeki, {
   filter: zwalkiFilter,
-  color: 'brown',
+  color: '#0000FF',
+  weight: 2,
   onEachFeature: function (feature, layer) {
     layer.bindPopup('<h4>'+feature.properties.name+'</h4><p> '+ opisRzek[feature.properties.name]+'</p>')
   }
