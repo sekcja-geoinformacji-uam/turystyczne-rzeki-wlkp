@@ -25,11 +25,21 @@ body {
 .lead{
     text-align: justify;
     text-indent: 3,5em;
+    color: #dddddd;
+}
+
+.napis{
+color: #dddddd
+}
+
+.autorzy{
+  color:#dddddd ;
 }
 
 .ikonka{
   font-size: 800%!important;
   margin-top: 30%;
+  color:#dddddd
 }
 
 .section2{
@@ -39,4 +49,5 @@ body {
 .opis{
   text-align: justify;
   text-indent: 1em;
+ color: #dddddd;
 }
